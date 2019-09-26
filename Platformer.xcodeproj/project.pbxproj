@@ -16,6 +16,7 @@
 		AC2F65B4233B12FC0083AEE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2F65B3233B12FC0083AEE7 /* Assets.xcassets */; };
 		AC2F65B7233B12FC0083AEE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2F65B5233B12FC0083AEE7 /* LaunchScreen.storyboard */; };
 		AC2F65BF233B1B020083AEE7 /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F65BE233B1B010083AEE7 /* Joystick.swift */; };
+		ACE2B2F1233C4CE60077A3A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE2B2F0233C4CE60077A3A1 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AC2F65B6233B12FC0083AEE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC2F65B8233B12FC0083AEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2F65BE233B1B010083AEE7 /* Joystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
+		ACE2B2F0233C4CE60077A3A1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AC2F65AE233B12FA0083AEE7 /* GameViewController.swift */,
 				AC2F65AC233B12FA0083AEE7 /* GameScene.swift */,
 				AC2F65BE233B1B010083AEE7 /* Joystick.swift */,
+				ACE2B2F0233C4CE60077A3A1 /* Player.swift */,
 				AC2F65A8233B12FA0083AEE7 /* GameScene.sks */,
 				AC2F65B0233B12FA0083AEE7 /* Main.storyboard */,
 				AC2F65B3233B12FC0083AEE7 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				AC2F65AD233B12FA0083AEE7 /* GameScene.swift in Sources */,
 				AC2F65BF233B1B020083AEE7 /* Joystick.swift in Sources */,
 				AC2F65AF233B12FA0083AEE7 /* GameViewController.swift in Sources */,
+				ACE2B2F1233C4CE60077A3A1 /* Player.swift in Sources */,
 				AC2F65A7233B12FA0083AEE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
