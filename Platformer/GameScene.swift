@@ -13,8 +13,15 @@ class GameScene: SKScene {
     
     let joystick = Joystick()
     
+    // Sprite Engine
+    var previousTimeInterval: TimeInterval = 0,
+        playerIsFacingRight = true
+    let playerSpeed = 4.0
+    var player: SKNode?
+    
     override func didMove(to view: SKView) {
         joystick.setup(scene: self)
+        player = childNode(withName: "player")
     }
 }
 
@@ -36,5 +43,20 @@ extension GameScene {
         for touch in touches {
             joystick.touchesEnded(touch: touch)
         }
+    }
+}
+
+// MARK:- Game Loop
+extension GameScene {
+    override func update(_ currentTime: TimeInterval) {
+        let deltaTime = currentTime - previousTimeInterval
+        previousTimeInterval = currentTime
+        
+        guard let joystickKnob = joystick.joystickKnob else { return }
+        guard let player = player else { return }
+        let xPosition = Double(joystickKnob.position.x)
+        let displacement = CGVector(dx: deltaTime * xPosition * playerSpeed, dy: 0)
+        let move = SKAction.move(by: displacement, duration: 0)
+        player.run(move)
     }
 }
