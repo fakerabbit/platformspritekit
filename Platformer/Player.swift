@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 class Player {
     
@@ -15,10 +16,22 @@ class Player {
     var playerIsFacingRight = true
     var player: SKNode?
     var joystick: Joystick?
+    var playerStateMachine: GKStateMachine!
+    var scene: SKScene?
     
     func setup(scene: SKScene, control: Joystick) {
         player = scene.childNode(withName: "player")
         joystick = control
+        self.scene = scene
+        
+        playerStateMachine = GKStateMachine(states: [
+            JumpingState(playerNode: player!),
+            WalkingState(playerNode: player!),
+            IdleState(playerNode: player!),
+            LandingState(playerNode: player!),
+            StunnedState(playerNode: player!)
+        ])
+        playerStateMachine.enter(IdleState.self)
     }
     
     func update(deltaTime: Double) {
@@ -43,5 +56,13 @@ class Player {
             faceAction = move
         }
         player.run(faceAction)
+    }
+    
+    func touchesBegan(touch: UITouch) {
+        
+        let location = touch.location(in: scene!)
+        if !(joystick!.joystick?.contains(location))! {
+            playerStateMachine.enter(JumpingState.self)
+        }
     }
 }

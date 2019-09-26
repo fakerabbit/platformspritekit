@@ -29,6 +29,7 @@ extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             joystick.touchesBegan(touch: touch)
+            player.touchesBegan(touch: touch)
         }
     }
     
