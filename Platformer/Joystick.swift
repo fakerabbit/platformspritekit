@@ -10,15 +10,24 @@ import Foundation
 import SpriteKit
 
 class Joystick {
+    
     var joystick: SKNode?,
         joystickKnob: SKNode?,
         joystickAction = false,
         knobRadius: CGFloat = 50.0
+    var cameraNode: SKCameraNode?
     
-    func setup(scene: SKScene) {
+    func setup(scene: SKScene, camera: SKCameraNode) {
         joystick = scene.childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         joystick?.zPosition = 1
+        
+        cameraNode = camera
+    }
+    
+    func update(deltaTime: Double) {
+        joystick?.position.y = (cameraNode!.position.y) - 150
+        joystick?.position.x = (cameraNode!.position.x) - 425
     }
     
     func touchesBegan(touch: UITouch) {

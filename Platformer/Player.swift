@@ -37,7 +37,16 @@ class Player {
     func update(deltaTime: Double) {
         guard let joystickKnob = joystick!.joystickKnob else { return }
         guard let player = player else { return }
+        
         let xPosition = Double(joystickKnob.position.x)
+        let positivePosition = xPosition < 0 ? -xPosition : xPosition
+        
+        if floor(positivePosition) != 0 {
+            playerStateMachine.enter(WalkingState.self)
+        } else {
+            playerStateMachine.enter(IdleState.self)
+        }
+        
         let displacement = CGVector(dx: deltaTime * xPosition * playerSpeed, dy: 0)
         let move = SKAction.move(by: displacement, duration: 0)
         

@@ -11,15 +11,16 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    let cameraNode = Camera()
     let joystick = Joystick()
-    
     let player = Player()
     
     // Sprite Engine
     var previousTimeInterval: TimeInterval = 0
     
     override func didMove(to view: SKView) {
-        joystick.setup(scene: self)
+        cameraNode.setup(scene: self)
+        joystick.setup(scene: self, camera: cameraNode.cameraNode!)
         player.setup(scene: self, control: joystick)
     }
 }
@@ -52,5 +53,7 @@ extension GameScene {
         let deltaTime = currentTime - previousTimeInterval
         previousTimeInterval = currentTime
         player.update(deltaTime: deltaTime)
+        cameraNode.update(deltaTime: deltaTime, position: player.player!.position)
+        joystick.update(deltaTime: deltaTime)
     }
 }
