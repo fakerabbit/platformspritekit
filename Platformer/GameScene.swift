@@ -19,6 +19,8 @@ class GameScene: SKScene {
     var previousTimeInterval: TimeInterval = 0
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
+        
         cameraNode.setup(scene: self)
         joystick.setup(scene: self, camera: cameraNode.cameraNode!)
         player.setup(scene: self, control: joystick)
@@ -55,5 +57,31 @@ extension GameScene {
         player.update(deltaTime: deltaTime)
         cameraNode.update(deltaTime: deltaTime, position: player.player!.position)
         joystick.update(deltaTime: deltaTime)
+    }
+}
+
+// MARK:- Collision
+extension GameScene: SKPhysicsContactDelegate {
+    
+    struct Collision {
+        enum Masks: Int {
+            case killing, player, reward, ground
+            var bitmask: UInt32 { return 1 << self.rawValue }
+        }
+        
+        let masks: (first: UInt32, second: UInt32)
+        
+        func matches(_ first: Masks, _ second: Masks) -> Bool {
+            return (first.bitmask == masks.first && second.bitmask == masks.second) ||
+            (first.bitmask == masks.second && second.bitmask == masks.first)
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collision = Collision(masks: (first: contact.bodyA.categoryBitMask, second: contact.bodyB.categoryBitMask))
+        
+        if collision.matches(.player, .ground) {
+            player.playerStateMachine.enter(LandingState.self)
+        }
     }
 }

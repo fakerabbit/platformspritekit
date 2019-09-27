@@ -41,7 +41,7 @@ class JumpingState: PlayerState {
         let jumpAction = SKAction.applyImpulse(CGVector(dx: 0, dy: 35), duration: 0.1)
         playerNode.run(jumpAction)
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
             self.hasFinishedJumping = true
         }
     }
