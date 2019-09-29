@@ -16,6 +16,8 @@
 		AC2F65B4233B12FC0083AEE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2F65B3233B12FC0083AEE7 /* Assets.xcassets */; };
 		AC2F65B7233B12FC0083AEE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2F65B5233B12FC0083AEE7 /* LaunchScreen.storyboard */; };
 		AC2F65BF233B1B020083AEE7 /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F65BE233B1B010083AEE7 /* Joystick.swift */; };
+		ACC8C00E233EAB0F00D66453 /* Sentinel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8C00D233EAB0F00D66453 /* Sentinel.swift */; };
+		ACC8C010233EB8A200D66453 /* SentinelStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8C00F233EB8A200D66453 /* SentinelStateMachine.swift */; };
 		ACE2B2F1233C4CE60077A3A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE2B2F0233C4CE60077A3A1 /* Player.swift */; };
 		ACE2B2F3233C5B2D0077A3A1 /* PlayerStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE2B2F2233C5B2D0077A3A1 /* PlayerStateMachine.swift */; };
 		ACE2B2F5233C66C70077A3A1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE2B2F4233C66C70077A3A1 /* Camera.swift */; };
@@ -33,6 +35,8 @@
 		AC2F65B6233B12FC0083AEE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC2F65B8233B12FC0083AEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC2F65BE233B1B010083AEE7 /* Joystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
+		ACC8C00D233EAB0F00D66453 /* Sentinel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentinel.swift; sourceTree = "<group>"; };
+		ACC8C00F233EB8A200D66453 /* SentinelStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentinelStateMachine.swift; sourceTree = "<group>"; };
 		ACE2B2F0233C4CE60077A3A1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		ACE2B2F2233C5B2D0077A3A1 /* PlayerStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateMachine.swift; sourceTree = "<group>"; };
 		ACE2B2F4233C66C70077A3A1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -73,7 +77,9 @@
 				AC2F65AC233B12FA0083AEE7 /* GameScene.swift */,
 				AC2F65BE233B1B010083AEE7 /* Joystick.swift */,
 				ACE2B2F0233C4CE60077A3A1 /* Player.swift */,
+				ACC8C00D233EAB0F00D66453 /* Sentinel.swift */,
 				ACE2B2F2233C5B2D0077A3A1 /* PlayerStateMachine.swift */,
+				ACC8C00F233EB8A200D66453 /* SentinelStateMachine.swift */,
 				ACE2B2F4233C66C70077A3A1 /* Camera.swift */,
 				AC2F65A8233B12FA0083AEE7 /* GameScene.sks */,
 				AC2F65B0233B12FA0083AEE7 /* Main.storyboard */,
@@ -161,8 +167,10 @@
 				AC2F65AD233B12FA0083AEE7 /* GameScene.swift in Sources */,
 				AC2F65BF233B1B020083AEE7 /* Joystick.swift in Sources */,
 				AC2F65AF233B12FA0083AEE7 /* GameViewController.swift in Sources */,
+				ACC8C00E233EAB0F00D66453 /* Sentinel.swift in Sources */,
 				ACE2B2F1233C4CE60077A3A1 /* Player.swift in Sources */,
 				ACE2B2F3233C5B2D0077A3A1 /* PlayerStateMachine.swift in Sources */,
+				ACC8C010233EB8A200D66453 /* SentinelStateMachine.swift in Sources */,
 				ACE2B2F5233C66C70077A3A1 /* Camera.swift in Sources */,
 				AC2F65A7233B12FA0083AEE7 /* AppDelegate.swift in Sources */,
 			);
