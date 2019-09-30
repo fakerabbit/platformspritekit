@@ -69,7 +69,7 @@ extension GameScene: SKPhysicsContactDelegate {
     
     struct Collision {
         enum Masks: Int {
-            case killing, player, reward, ground, sentinel
+            case killing, player, reward, ground, sentinel, invisibleBlocks
             var bitmask: UInt32 { return 1 << self.rawValue }
         }
         

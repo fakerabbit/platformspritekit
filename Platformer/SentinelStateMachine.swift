@@ -23,7 +23,6 @@ class SentinelState: GKState {
 
 class LandingSentinelState: SentinelState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        debugPrint("stateClass: \(stateClass)")
         switch stateClass {
         case is LandingSentinelState.Type: return false
         default: return true
@@ -37,7 +36,6 @@ class LandingSentinelState: SentinelState {
 
 class IdleSentinelState: SentinelState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        debugPrint("stateClass: \(stateClass)")
         switch stateClass {
         case is LandingSentinelState.Type, is IdleSentinelState.Type: return false
         default: return true
@@ -55,7 +53,6 @@ class IdleSentinelState: SentinelState {
 
 class WalkingLeftState: SentinelState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        debugPrint("stateClass: \(stateClass)")
         switch stateClass {
         case is LandingSentinelState.Type, is WalkingLeftState.Type: return false
         default: return true
@@ -73,7 +70,6 @@ class WalkingLeftState: SentinelState {
 
 class WalkingRightState: SentinelState {
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        debugPrint("stateClass: \(stateClass)")
         switch stateClass {
         case is LandingSentinelState.Type, is WalkingRightState.Type: return false
         default: return true
