@@ -18,9 +18,11 @@ class Player {
     var joystick: Joystick?
     var playerStateMachine: GKStateMachine!
     var scene: SKScene?
+    var camera: SKCameraNode?
     
     func setup(scene: SKScene, control: Joystick) {
         player = scene.childNode(withName: "player")
+        camera = scene.childNode(withName: "cameraNode") as? SKCameraNode
         joystick = control
         self.scene = scene
         
@@ -69,7 +71,7 @@ class Player {
     
     func touchesBegan(touch: UITouch) {
         
-        let location = touch.location(in: scene!)
+        let location = touch.location(in: camera!)
         if !(joystick!.joystick?.contains(location))! {
             playerStateMachine.enter(JumpingState.self)
         }

@@ -24,7 +24,7 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         
         cameraNode.setup(scene: self)
-        joystick.setup(scene: self, camera: cameraNode.cameraNode!)
+        joystick.setup(scene: self)
         player.setup(scene: self, control: joystick)
         sentinel.setup(scene: self)
     }
@@ -57,7 +57,6 @@ extension GameScene {
     override func update(_ currentTime: TimeInterval) {
         let deltaTime = currentTime - previousTimeInterval
         previousTimeInterval = currentTime
-        joystick.update(deltaTime: deltaTime)
         player.update(deltaTime: deltaTime)
         cameraNode.update(deltaTime: deltaTime, position: player.player!.position)
         sentinel.update(deltaTime: deltaTime)

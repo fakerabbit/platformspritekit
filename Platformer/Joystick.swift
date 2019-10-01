@@ -15,19 +15,16 @@ class Joystick {
         joystickKnob: SKNode?,
         joystickAction = false,
         knobRadius: CGFloat = 50.0
-    var cameraNode: SKCameraNode?
     
-    func setup(scene: SKScene, camera: SKCameraNode) {
-        joystick = scene.childNode(withName: "joystick")
+    func setup(scene: SKScene) {
+        let camera = scene.childNode(withName: "cameraNode")
+        joystick = camera!.childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         joystick?.zPosition = 1
-        
-        cameraNode = camera
-    }
-    
-    func update(deltaTime: Double) {
-        joystick?.position.y = (cameraNode!.position.y) - 150
-        joystick?.position.x = (cameraNode!.position.x) - 425
+        let initialVerticalOffset: CGFloat = -UIScreen.main.bounds.size.height
+        let initialHorizontalOffset = UIScreen.main.bounds.size.width + 200
+        joystick?.position.y = initialVerticalOffset
+        joystick?.position.x = -initialHorizontalOffset
     }
     
     func touchesBegan(touch: UITouch) {
